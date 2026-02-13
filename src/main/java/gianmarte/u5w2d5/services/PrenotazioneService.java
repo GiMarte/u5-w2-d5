@@ -4,9 +4,11 @@ import gianmarte.u5w2d5.entities.Prenotazione;
 import gianmarte.u5w2d5.payloads.PrenotazioneDTO;
 import gianmarte.u5w2d5.repository.PrenotazioneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PrenotazioneService {
 
     private final PrenotazioneRepository prenotazioneRepository;

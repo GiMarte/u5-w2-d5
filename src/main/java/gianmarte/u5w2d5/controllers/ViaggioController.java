@@ -25,12 +25,12 @@ public class ViaggioController {
     @ResponseStatus(HttpStatus.CREATED)
     public ViaggioDTO creoViaggio(@Valid @RequestBody ViaggioDTO payload) {
         Viaggio salvato = viaggioService.save(payload);
-        return new ViaggioDTO(payload.destinazione(),payload.data(),payload.stato());
+        return new ViaggioDTO(salvato.getDestinazione(), salvato.getData(),salvato.getStato());
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Viaggio> getAllDipendenti() {
+    public List<Viaggio> getAllViaggi() {
         return viaggioService.findAll();
     }
 }
