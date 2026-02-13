@@ -2,6 +2,7 @@ package gianmarte.u5w2d5.services;
 
 import com.cloudinary.Cloudinary;
 import gianmarte.u5w2d5.entities.Dipendente;
+import gianmarte.u5w2d5.exceptions.NotFoundException;
 import gianmarte.u5w2d5.payloads.DipendenteDTO;
 import gianmarte.u5w2d5.repository.DipendenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,4 +34,8 @@ public class DipendenteService {
         return dipendenteRepository.findAll();
     }
 
+    public Dipendente findById(Long id) {
+        return this.dipendenteRepository.findById(id)
+                                       .orElseThrow(() -> new NotFoundException(id));
+    }
 }

@@ -3,8 +3,10 @@ package gianmarte.u5w2d5.services;
 
 import gianmarte.u5w2d5.entities.Viaggio;
 import gianmarte.u5w2d5.exceptions.BadRequestException;
+import gianmarte.u5w2d5.exceptions.NotFoundException;
 import gianmarte.u5w2d5.payloads.ViaggioDTO;
 import gianmarte.u5w2d5.repository.ViaggioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 public class ViaggioService {
     private final ViaggioRepository viaggioRepository;
 
+    @Autowired
     public ViaggioService(ViaggioRepository viaggioRepository) {
         this.viaggioRepository = viaggioRepository;
     }
@@ -26,6 +29,10 @@ public class ViaggioService {
 
     public List<Viaggio> findAll() {
         return viaggioRepository.findAll();
+    }
+    public Viaggio findById(Long id) {
+        return this.viaggioRepository.findById(id)
+                                        .orElseThrow(() -> new NotFoundException(id));
     }
 
 }
