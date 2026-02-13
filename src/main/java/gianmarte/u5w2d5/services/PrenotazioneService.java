@@ -27,7 +27,7 @@ public class PrenotazioneService {
         if (this.prenotazioneRepository.existsByDipendenteAndDataRichiesta(this.dipendenteService.findById(dto.dipendenteId()), dto.dataRichiesta()) ){
             throw new BadRequestException("La prenotazione e' gia' occupata");
         }
-        Prenotazione nuovoPrenotazione = new Prenotazione(this.viaggioService.findById(dto.id()), this.dipendenteService.findById(dto.id()), dto.dataRichiesta(), dto.note(), dto.preferenze());
+        Prenotazione nuovoPrenotazione = new Prenotazione(this.viaggioService.findById(dto.viaggioId()), this.dipendenteService.findById(dto.dipendenteId()), dto.dataRichiesta(), dto.note(), dto.preferenze());
         return this.prenotazioneRepository.save(nuovoPrenotazione);
     }
 

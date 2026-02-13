@@ -25,7 +25,7 @@ public class PrenotazioneController {
     @ResponseStatus(HttpStatus.CREATED)
     public PrenotazioneDTO creoPrenotazione(@Valid @RequestBody PrenotazioneDTO payload) {
         Prenotazione salvato = prenotazioneService.save(payload);
-        return new PrenotazioneDTO(salvato.getId(), salvato.getViaggio().getId(),salvato.getDipendente().getId(),salvato.getDataRichiesta(),salvato.getNote(),salvato.getPreferenze());
+        return new PrenotazioneDTO( salvato.getViaggio().getId(),salvato.getDipendente().getId(),salvato.getDataRichiesta(),salvato.getNote(),salvato.getPreferenze());
     }
 
     @GetMapping

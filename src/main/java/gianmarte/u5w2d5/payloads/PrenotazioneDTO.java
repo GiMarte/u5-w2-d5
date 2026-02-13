@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 
 public record PrenotazioneDTO(
-        Long id,
+
 
         @NotNull(message = "ID viaggio obbligatorio")
          Long viaggioId,

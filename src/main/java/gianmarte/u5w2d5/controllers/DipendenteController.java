@@ -26,7 +26,7 @@ public class DipendenteController {
     @ResponseStatus(HttpStatus.CREATED)
     public DipendenteDTO creoDipendente(@Valid @RequestBody DipendenteDTO payload) {
         Dipendente salvato = dipendenteService.save(payload);
-        return new DipendenteDTO(salvato.getId(), salvato.getUsername(), salvato.getNome(), salvato.getCognome(), salvato.getEmail(), salvato.getImgProfilo()
+        return new DipendenteDTO(salvato.getId(), salvato.getImgProfilo(), salvato.getUsername(), salvato.getNome(), salvato.getCognome(), salvato.getEmail()
         );
     }
 
