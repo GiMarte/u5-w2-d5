@@ -14,11 +14,13 @@ public class Dipendente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true, nullable = false)
+    private String imgProfilo;
     private String username;
     private String nome;
     private String cognome;
     @Column(unique = true, nullable = false)
     private String email;
+
 
     public Dipendente(String username, String nome, String cognome, String email) {
     this.username = username;
