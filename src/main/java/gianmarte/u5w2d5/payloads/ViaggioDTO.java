@@ -12,7 +12,6 @@ public record ViaggioDTO(
         String destinazione,
 
         @NotNull(message = "Data obbligatoria")
-        @NotBlank(message = "La data deve essere odierna o futura")
         LocalDate data,
 
         @NotNull(message = "Stato obbligatorio")
