@@ -10,10 +10,10 @@ public record PrenotazioneDTO(
         Long id,
 
         @NotNull(message = "ID viaggio obbligatorio")
-         Long viaggio,
+         Long viaggioId,
 
         @NotNull(message = "ID dipendente obbligatorio")
-         Long dipendente,
+         Long dipendenteId,
 
         @NotNull(message = "Data richiesta obbligatoria")
         @FutureOrPresent(message = "La data richiesta deve essere odierna o futura")
