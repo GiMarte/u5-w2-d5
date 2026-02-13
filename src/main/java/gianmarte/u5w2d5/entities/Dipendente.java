@@ -21,11 +21,10 @@ public class Dipendente {
     @Column(unique = true, nullable = false)
     private String email;
 
-
-    public Dipendente(String username, String nome, String cognome, String email) {
+public Dipendente(String imgProfilo, String username, String nome, String cognome, String email) {
+    this.imgProfilo = imgProfilo;
     this.username = username;
     this.nome = nome;
     this.cognome = cognome;
     this.email = email;
-
 }}
