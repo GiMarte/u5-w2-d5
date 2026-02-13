@@ -10,7 +10,7 @@ public record DipendenteDTO(
         String imgProfilo,
 
         @NotBlank(message = "L'username e' obbligatorio")
-        @Size(min = 5, max = 12, message = "L'username e' compreso da 5 ad un massimo di 12 caratteri")
+        @Size(min = 2, max = 12, message = "L'username e' compreso da 2 ad un massimo di 12 caratteri")
         String username,
 
         @NotBlank(message = "Il nome è un campo obbligatorio")
